@@ -1,0 +1,81 @@
+{% extends 'main/base.html' %}
+{% load i18n %}
+{% block title %}<title>{% trans '🍕Профиль'%}</title>{% endblock %}
+
+
+{% block content %}
+    <br><br>
+    <div class="container">
+
+        <figure style="border-style: groove; border-width: 1px;">
+            <br>
+            <figure style="">
+                <p style="text-align: center"><img style="border-radius: 10px;"
+                                                   src="https://cdn.dribbble.com/users/374672/screenshots/4016225/media/9fcf684c449a17d20943bb8a31a06795.gif"/>
+                </p>
+
+            </figure>
+            {% if user.is_authenticated %}
+                <figure style="display: flex; justify-content: space-between;">
+                    <a href="{% url 'password_change' %}">
+                        <button style="
+    background-color: rgb(255, 240, 230);
+    color: rgb(209, 87, 0);outline: none;
+    border: none;
+    border-radius: 9999px;
+    text-align: center;
+    font-weight: 500;
+    padding: 8px 20px;
+    font-size: 16px;
+    line-height: 24px;
+    flex: 0 0 auto;
+    height: 100px;
+    min-width: 120px;"><h1 style="color:#CF8121">{% trans 'Сменить Пароль'%}</h1></button>
+                    </a>
+                    <a href="{% url 'logout' %}">
+                        <button style="
+    background-color: rgb(255, 240, 230);
+    color: rgb(209, 87, 0);outline: none;
+    border: none;
+    border-radius: 9999px;
+    text-align: center;
+    font-weight: 500;
+    padding: 8px 20px;
+    font-size: 16px;
+    line-height: 24px;
+    flex: 0 0 auto;
+    height: 100px;
+    min-width: 120px;"><h1 style="color:#CF8121">{% trans 'Выйти из аккаунта'%} {{ user.username }}</h1></button>
+                    </a>
+
+                    <a href="#" class="open-popup">
+                        <button  style="
+    background-color: rgb(255, 240, 230);
+    color: rgb(209, 87, 0);outline: none;
+    border: none;
+    border-radius: 9999px;
+    text-align: center;
+    font-weight: 500;
+    padding: 8px 20px;
+    font-size: 16px;
+    line-height: 24px;
+    flex: 0 0 auto;
+    height: 100px;
+    min-width: 120px;"><h1 style="color:#CF8121">{% trans 'Выбрать Город'%}</h1></button>
+                    </a>
+
+                </figure>
+            {% else %}
+                <div style="min-height: calc(100vh - 460px); display: flex;justify-content: center;align-items: center;">
+                    <h1 style="color:gray;text-align-all: center;font-size: xxx-large;">{% trans 'Сначало войдите в аккаунт'%}</h1>
+                </div>
+            {% endif %}
+            <br>
+
+        </figure>
+
+
+    </div>
+
+{% endblock %}
+

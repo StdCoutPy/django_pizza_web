@@ -1,0 +1,233 @@
+{% load static %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link type="text/css" href="{% static 'main/css/style.css' %}" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://unpkg.com/flexboxgrid2@7.2.1/flexboxgrid2.min.css">
+    <link rel="shortcut icon" type="image/png"
+          href="https://yt3.googleusercontent.com/g0Gu9aiy99YkCsXrtiCj8cTNM9tmWnA2u_Wd0v3RVd0TN58BZaeHOTbWCiCDhNyuDUwgcRhJ1Q=s176-c-k-c0x00ffffff-no-rj">
+
+    <meta charset="UTF-8">
+    <title>{% translate '🍕Корзина🛒' %}</title>
+
+</head>
+<body>
+<div class='main'>
+    <header>
+        <div class="container">
+            <div class="logo_container" href="{% url 'home' %}"><a href="{% url 'home' %}"><img
+                    src="..\media\all_logas\main_logo.png"
+                    width="290"></a></div>
+            <nav>
+                <ul>
+                    <div class="container" id="nav_container">
+
+                        <li>
+                            <a href="{% url 'search1' %}" style="text-decoration: none; color: gray;">
+                                <img
+                                    style="height: 50px;"
+                                    src="..\media\all_logas\search.png">
+                            </a>
+
+                        </li>
+                        <li>
+
+                            <a href="{% url 'profil' %}" style="text-decoration: none; color: gray;"><img
+                                    style="height: 50px;"
+                                    src="..\media\all_logas\profile.gif">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'login' %}" style="text-decoration: none; color: black;"><img
+                                    style="height: 50px;"
+                                    src="..\media\all_logas\login.png">
+                            </a>
+
+                        </li>
+                        <li>
+                            <a href="{% url 'basket' %}" style="text-decoration: none; color: black;"><img
+                                    style='height: 50px' ;
+                                    src="..\media\all_logas\basket.png"></a>
+                        </li>
+
+
+                    </div>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container_1">
+        <div class="container">
+            <div class="h3_box col-lg-12 col-xs-12 col-md-12"><h1 style="color:#CF8121;">{% translate 'Корзина' %}</h1></div>
+
+            <form method="POST">
+                {% csrf_token %}
+                {% if menu %}
+                    <div style="min-height: calc(100vh - 460px);" class="container_6  col-xs-12 col-md-12 col-lg-12">
+
+                        {% for el in menu %}
+
+                            <div class="col-xs-12 col-md-12 col-lg-4">
+                                <div class="container_menu" style="border-style: groove; border-width: 1px;"
+                                     align="center">
+
+                                    <figure>
+
+                                        <figcaption>
+                                            {% for i in el %}
+
+                                                <h2 class="names" align="center"
+                                                    style="color:#CF8121;">{{ i.title }}</h2>
+
+                                                {% if i.count %}
+                                                    <p style="color:gray;">
+                                                        <button type="submit" value="{{ el }}"
+                                                                name="change_count_minus"/>
+                                                        -</button>
+                                                        {% translate 'Колличество' %} {{ i.count }}
+                                                        <button type="submit" value="{{ el }}"
+                                                                name="change_count_plus"/>
+                                                        +</button>
+                                                    </p>
+                                                {% endif %}
+                                                {% if i.price %}
+                                                    <p class="roles" align="center"
+                                                       style="width: 50%;font-family: serif;color:gray;">{% trans 'Цена тг от:' %}
+                                                        {{ i.price }}</p>
+                                                {% endif %}
+
+                                            {% endfor %}
+                                            <p>
+                                                <button style="
+    background-color: rgb(255, 240, 230);
+    color: rgb(209, 87, 0);outline: none;
+    border: none;
+    border-radius: 9999px;
+    text-align: center;
+    font-weight: 500;
+    padding: 8px 20px;
+    font-size: 16px;
+    line-height: 24px;
+    flex: 0 0 auto;
+    height: 40px;
+    min-width: 120px;" type="submit" value="{{ el }}" name="del_in_basket"/>
+                                                {% trans 'Удалить' %}</button>
+                                            </p>
+
+                                        </figcaption>
+                                    </figure>
+
+                                </div>
+                            </div>
+                        {% endfor %}
+
+
+                    </div>
+                {% else %}
+                    <div style="min-height: calc(100vh - 460px); display: flex;justify-content: center;align-items: center;">
+                        <h1 style="color:gray;text-align-all: center;font-size: xxx-large;">{% trans 'Здесь будет ваш Заказ' %}</h1>
+                    </div>
+                {% endif %}
+                <button type="submit" class="registerbtn" value="order" name="order"/>
+                {% trans 'Заказать на сумму' %} {{ summ_money }} {% trans 'тенге'%} </button>
+            </form>
+
+        </div>
+        <footer>
+
+        <div class="footer">
+            <div class="footer_main">
+                <div class="footer_left">
+                    <div class="footer_container_2">
+                    <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+                        <input name="next" type="hidden" value="{{ redirect_to }}">
+                        <select class="lang-selector" name="language">
+                            {% get_current_language as LANGUAGE_CODE %}
+                            {% get_available_languages as LANGUAGES %}
+                            {% get_language_info_list for LANGUAGES as languages %}
+                            {% for language in languages %}
+                                <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %}
+                                        selected{% endif %}>
+                                    {{ language.name_local }} ({{ language.code }})
+                                </option>
+                            {% endfor %}
+                        </select>
+                        <input  class="lang-button" type="submit" value="apply">
+                    </form>
+                </div>
+                    <div class="footer_container_2">
+                        <a href="https://apps.apple.com/us/app/little-caesars/id992600579"><img
+                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/2560px-Download_on_the_App_Store_Badge.svg.png">
+                        </a>
+                    </div>
+                    <div class="footer_container_2">
+                        <a href="https://play.google.com/store/apps/details?id=com.littlecaesars"><img
+                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Google_Play_Store_badge_FR.svg/2560px-Google_Play_Store_badge_FR.svg.png">
+                        </a>
+                    </div>
+                </div>
+                <div class="footer_center">
+                    <a href="https://littlecaesars.com/en-us/our-history" style="color:#FFFFFF ;text-decoration:none">
+                        <p>{% trans 'Об Little Ceasears' %}</p></a>
+                    <a data-href="/admin"
+                       onclick="window.open('m', 'my-new-popup', 'width=400,height=600,toolbar=no,scrollbars=yes,resizable=yes'); return false;"
+                       style="color:#FFFFFF ;text-decoration:none"><p>{% trans 'Станьте партнёром по доставке'%}</p></a>
+
+                    <div style="display: flex; justify-content: space-between; max-width: 110px;"><a href="https://www.facebook.com/LittleCaesars"
+                            style="color:#FFFFFF ;text-decoration:none">
+                        <p><img src="https://cdn-icons-png.flaticon.com/128/733/733547.png" style="max-width: 35px;">
+                        </p></a>
+                        <a href="https://www.instagram.com/LittleCaesars/"
+                           style="color:#FFFFFF ;text-decoration:none">
+                            <p><img src="https://cdn-icons-png.flaticon.com/128/2111/2111463.png"
+                                    style="max-width: 35px;"></p></a>
+                    </div>
+                </div>
+                <div class="footer_right">
+                    <p>{% trans 'звонок по телефону'%}</p>
+                    <h3>+7 747 XXX-XX-XX</h3>
+                    <p>feedback@LittleCaesars.kz</p>
+                </div>
+
+
+                <div class="popup__bg">
+                    <div class="popup">
+                        <a class="close-popup">❌</a>
+                        <div class="container">
+                            <form method="POST">
+                                {% csrf_token %}
+                                {% for i in cities %}
+                                    <li style="display:flex;justify-content: space-between;">
+                                        {% for j in i %}
+                                            <button style="
+    background-color: rgb(255, 240, 230);
+    color: rgb(209, 87, 0);outline: none;
+    border: none;
+    border-radius: 9999px;
+    text-align: center;
+    font-weight: 500;
+    padding: 8px 20px;
+    font-size: 16px;
+    line-height: 24px;
+    flex: 0 0 auto;
+    height: 40px;
+    min-width: 120px;" type="submit" value="{{ j }}" name="city"><a>{{ j }}</a></button>
+                                        {% endfor %}
+                                    </li>
+                                    <br>
+                                {% endfor %}
+                            </form>
+                        </div>
+
+
+                    </div>
+                </div>
+                <script src="../../../static/main/js/main.js"></script>
+            </div>
+        </div>
+    </footer>
+</div>
+</div>
+</html>
