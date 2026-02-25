@@ -8,9 +8,7 @@ ENV/
 db.sqlite3
 *.log
 
-# Статика и медиа (результаты работы, а не исходники)
-static/
-media/
+
 
 # Кэш Python и IDE
 __pycache__/
