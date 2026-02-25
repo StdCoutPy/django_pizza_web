@@ -1,0 +1,195 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-08-14 00:07+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\templates\main\base.html:91 .\templates\main\basket.html:164
+msgid "Об Little Ceasears"
+msgstr "About Little Ceasears"
+
+#: .\templates\main\base.html:94 .\templates\main\basket.html:167
+msgid "Станьте партнёром по доставке"
+msgstr "Become a delivery partner"
+
+#: .\templates\main\base.html:107 .\templates\main\basket.html:180
+msgid "звонок по телефону"
+msgstr "phone call"
+
+#: .\templates\main\basket.html:13
+msgid "🍕Корзина🛒"
+msgstr "🍕shopping cart🛒"
+
+#: .\templates\main\basket.html:54
+msgid "Корзина"
+msgstr "shopping cart"
+
+#: .\templates\main\basket.html:80
+msgid "Колличество"
+msgstr "count"
+
+#: .\templates\main\basket.html:88 .\templates\main\index.html:71
+msgid "Цена тг от:"
+msgstr "The price of tenge from:"
+
+#: .\templates\main\basket.html:107
+msgid "Удалить"
+msgstr "Remove"
+
+#: .\templates\main\basket.html:121
+msgid "Здесь будет ваш Заказ"
+msgstr "Here will be your Order"
+
+#: .\templates\main\basket.html:125
+msgid "Заказать на сумму"
+msgstr "Order for the amount"
+
+#: .\templates\main\basket.html:125
+msgid "тенге"
+msgstr "tenge"
+
+#: .\templates\main\index.html:6
+msgid "🍕 Пицца Казахстан"
+msgstr "🍕 Pizza Kazakhstan"
+
+#: .\templates\main\index.html:18
+msgid "Для админа и рабочего персонала"
+msgstr "For admin and working staff"
+
+#: .\templates\main\index.html:20
+msgid "Перейти в админку"
+msgstr "Go to the admin panel"
+
+#: .\templates\main\index.html:24
+msgid "Игра для детей"
+msgstr "A game for children"
+
+#: .\templates\main\index.html:27
+msgid "Среднее время приготовления"
+msgstr "Average cooking time"
+
+#: .\templates\main\index.html:28
+msgid "60 минут"
+msgstr "60 minutes"
+
+#: .\templates\main\index.html:30
+msgid "Выбор категории"
+msgstr "Choosing a category"
+
+#: .\templates\main\index.html:40
+msgid "🍕Пиццы"
+msgstr "🍕Pizzas"
+
+#: .\templates\main\index.html:41
+msgid "🍔Бургеры"
+msgstr "🍔Burgers"
+
+#: .\templates\main\index.html:42
+msgid "🥗Салаты"
+msgstr "🥗Salads"
+
+#: .\templates\main\index.html:43
+msgid "🍹Напитки"
+msgstr "🍹Drinks"
+
+#: .\templates\main\index.html:44
+msgid "🎂Десерты"
+msgstr "🎂Desserts"
+
+#: .\templates\main\profil.html:3
+msgid "🍕Профиль"
+msgstr "🍕Профиль"
+
+#: .\templates\main\profil.html:33 .\templates\registration\login.html:48
+msgid "Сменить Пароль"
+msgstr "Change Password"
+
+#: .\templates\main\profil.html:48 .\templates\registration\login.html:29
+msgid "Выйти из аккаунта"
+msgstr "Log out of your account"
+
+#: .\templates\main\profil.html:64
+msgid "Выбрать Город"
+msgstr "Choose a City"
+
+#: .\templates\main\profil.html:70
+msgid "Сначало войдите в аккаунт"
+msgstr "Log in to your account first"
+
+#: .\templates\registration\login.html:4
+msgid "🍕Вход"
+msgstr "🍕Enter"
+
+#: .\templates\registration\login.html:10
+msgid "Вы уже вошли в аккаунт:"
+msgstr "You are already logged in to your account:"
+
+#: .\templates\registration\login.html:35
+msgid "Вход"
+msgstr "Enter"
+
+#: .\templates\registration\login.html:36
+msgid "Введите данные для входа в аккаунта"
+msgstr "Enter your account login details"
+
+#: .\templates\registration\login.html:43
+#: .\templates\registration\register.html:29
+msgid "Войти"
+msgstr "Enter"
+
+#: .\templates\registration\login.html:47
+msgid "Забыли пароль?"
+msgstr "Forgot your password?"
+
+#: .\templates\registration\login.html:50
+msgid "У вас нет аккаунта?"
+msgstr "Don't you have an account?"
+
+#: .\templates\registration\login.html:51
+msgid "Зарегистрироваться"
+msgstr "Register"
+
+#: .\templates\registration\register.html:4
+msgid "🍕Регистрация"
+msgstr "🍕Registration"
+
+#: .\templates\registration\register.html:12
+msgid "Регистрация"
+msgstr "Registration"
+
+#: .\templates\registration\register.html:13
+msgid "Введите и подтвердите данные почты для создание аккаунта"
+msgstr "Enter and confirm the email details for creating an account"
+
+#: .\templates\registration\register.html:20
+msgid "Создавая учетную запись, вы соглашаетесь с нашими"
+msgstr "By creating an account, you agree to our"
+
+#: .\templates\registration\register.html:20
+msgid "Условия и конфиденциальность"
+msgstr "Terms and Confidentiality"
+
+#: .\templates\registration\register.html:25
+msgid "Зарегестрироваться"
+msgstr "Register"
+
+#: .\templates\registration\register.html:29
+msgid "У вас уже есть аккаунт?"
+msgstr "Do you already have an account?"
+
+#~ msgid "Добавить в меню"
+#~ msgstr "Add to Menu"

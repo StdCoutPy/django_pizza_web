@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/png" href="https://yt3.googleusercontent.com/g0Gu9aiy99YkCsXrtiCj8cTNM9tmWnA2u_Wd0v3RVd0TN58BZaeHOTbWCiCDhNyuDUwgcRhJ1Q=s176-c-k-c0x00ffffff-no-rj">
+    <title>Memory Game</title>
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'main/css/game/style.css' %}"/>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<header>
+    <span class="title">memory game</span>
+
+    <div class="buttons">
+        <button class="button" id="restart">Restart</button>
+        <button class="button" id="new_game">New Game</button>
+    </div>
+</header>
+
+<div class="details">
+    <div class="flips">
+        <span class="text">flips</span>
+        <span class="dynamic_text" id="num_flips"></span>
+    </div>
+</div>
+<main>
+    <div class="row">
+        <div class="card">
+            <div class="card_inner">
+                <div class="front"></div>
+                <div class="back"></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card_inner">
+                <div class="front"></div>
+                <div class="back"></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card_inner">
+                <div class="front"></div>
+                <div class="back"></div>
+            </div>
+        </div>
+        <div class="card">
+
+            <div class="card_inner">
+                <div class="front"></div>
+                <div class="back"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="card">
+            <div class="card_inner">
+                <div class="front"></div>
+                <div class="back"></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card_inner">
+                <div class="front"></div>
+                <div class="back"></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card_inner">
+                <div class="front"></div>
+                <div class="back"></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card_inner">
+                <div class="front"></div>
+                <div class="back"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="card">
+            <div class="card_inner">
+                <div class="front"></div>
+                <div class="back"></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card_inner">
+                <div class="front"></div>
+                <div class="back"></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card_inner">
+                <div class="front"></div>
+                <div class="back"></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card_inner">
+                <div class="front"></div>
+                <div class="back"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="card">
+            <div class="card_inner">
+                <div class="front"></div>
+                <div class="back"></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card_inner">
+                <div class="front"></div>
+                <div class="back"></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card_inner">
+                <div class="front"></div>
+                <div class="back"></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card_inner">
+                <div class="front"></div>
+                <div class="back"></div>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<div class="attribution"> <h1 style="color:#922E00"><a style="color:#f38504" href="{%url 'home'%}">На главную</a></h1>
+
+</div>
+
+<!-- modals -->
+
+
+<div id="success_modal" class="modal">
+    <p class="modal_text">You win!</p>
+    <button class="button" id="replay">Play Again</button>
+</div>
+
+<div id="shield"></div>
+<!-- partial -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+<script src="../../../static/main/js/game/script.js"></script>
+
+</body>
+</html>

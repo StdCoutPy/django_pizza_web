@@ -1,0 +1,20 @@
+# Окружение и настройки
+.env
+.venv/
+venv/
+ENV/
+
+# База данных и логи
+db.sqlite3
+*.log
+
+# Статика и медиа (результаты работы, а не исходники)
+static/
+media/
+
+# Кэш Python и IDE
+__pycache__/
+*.pyc
+.DS_Store
+.idea/
+.vscode/
