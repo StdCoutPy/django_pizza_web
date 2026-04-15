@@ -24,13 +24,13 @@ env = environ.Env()
 environ.Env.read_env('/Users/mrbread/PycharmProjects/coolsite/.env')
 # Теперь используй env() для получения данных
 SECRET_KEY = env('SECRET_KEY')
-DEBUG = env.bool('DEBUG', default=False)
+DEBUG = env.bool('DEBUG')
 
 EMAIL_HOST_USER = env('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
 DEFAULT_FROM_EMAIL=env('DEFAULT_FROM_EMAIL')
-RECIPIENTS_EMAIL=env.list('RECIPIENTS_EMAIL', default=[])
-CSRF_TRUSTED_ORIGINS=env.list('CSRF_TRUSTED_ORIGINS', default=[])
+RECIPIENTS_EMAIL=env.list('RECIPIENTS_EMAIL')
+CSRF_TRUSTED_ORIGINS=env.list('CSRF_TRUSTED_ORIGINS')
 
 
 
@@ -155,8 +155,8 @@ LOCALE_PATHS = [
 PROJECT_ROOT = os.path.normpath(os.path.dirname(__file__))
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'main/static'),)
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'coolsite/static'),)
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

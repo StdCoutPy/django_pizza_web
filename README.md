@@ -7,6 +7,21 @@ Python
 
 ---
 
+<table width="100%">
+  <tr>
+    <td width="33.3%"   align="center"><img src="media/readme_photos/Readme_6.png" width="100%"></td>
+    <td width="33.3%"  align="center"><img src="media/readme_photos/Readme_5.png" width="100%"></td>
+    <td width="33.3%"  align="center"><img src="media/readme_photos/Readme_4.png" width="100%"></td>
+  </tr>
+  <tr>
+    <td width="33.3%"   align="center"><img src="media/readme_photos/Readme_3.png" width="100%"></td>
+    <td width="33.3%"  align="center"><img src="media/readme_photos/Readme_2.png" width="100%"></td>
+    <td width="33.3%" align="center"><img src="media/readme_photos/Readme_1.png" width="100%"></td>
+  </tr>
+</table>
+
+
+
 ## 🚀 Основной функционал
 
 - **Каталог товаров:** Выбор пиццы, закусок и напитков.

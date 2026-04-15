@@ -25,10 +25,15 @@ from main.views import Catch_404
 
 from main import views
 
+from django.views.static import serve
+from django.urls import re_path
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main.urls')),
 path('i18n/', include('django.conf.urls.i18n')),
+    re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
+    re_path(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATICFILES_DIRS[0]}),
 ]
 
 urlpatterns += i18n_patterns(
